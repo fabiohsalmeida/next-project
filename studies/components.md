@@ -1,3 +1,26 @@
+# Components
+
+Components are ment to be reused, they use captal first letter and normally we keep them inside components folder outside of ``app``.
+
+Example of component:
+
+```tsx
+// src/components/footer/Footer.jsx
+
+export default function Footer() {
+    return (
+        <div>
+            Footer
+        </div>
+    )
+}
+```
+
+Example of using component:
+
+```tsx
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -26,3 +49,4 @@ export default function RootLayout({
     </html>
   );
 }
+```

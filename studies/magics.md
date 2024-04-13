@@ -75,3 +75,21 @@ export default function BlogLayout({children}) {
     )
 }
 ```
+
+### loading.tsx
+
+You can have different loading options for each component/directory, just create a file named ``loading.tsx`` and insert your normal code, for example:
+
+```tsx
+// src/app/contact/loading.tsx
+
+import React from 'react'
+
+export default function Loading() {
+    return (
+        <div>loading</div>
+    )
+}
+```
+
+### error.tsx
