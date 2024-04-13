@@ -4,14 +4,74 @@ The App Route makes routing easier, it simple take the name of the folder (start
 
 Magic.
 
+Example:
+
+```
+src/app/blog
+src/app/dashboard
+src/app/contact
+```
+
 ### Variables in path (/blog/1)
 
 It's as simple as not having it, you create the folder inside ``blog`` name with the variable that you want, for example I want it to be ``/blog/{id}``, my folder is named ``[id]`` and has a ``page.jsx`` inside of it. 
 
 Magic.
 
+Example:
+
+```
+src/app/blog/[id]
+```
+
 ### Group of pages ()
 
 To create a group of pages without changing the path it's simple, just create a folder with ``(name)``, the brakets are going to be interprated has a group and not as a path and life will goes on.
 
 Magic.
+
+Example:
+
+```
+src/app/dashboard/(auth)/login
+src/app/dashboard/(auth)/register
+```
+
+## Files
+
+### page.tsx
+
+The NextJS will search and render it, it will be always the page
+
+Sample:
+
+```tsx
+// src/app/contact/page.jsx
+export default function Contact() {
+    return (
+        <div>
+            Contact
+        </div>
+    )
+}
+```
+
+### layout.tsx
+
+It's a default layout for that parent to all childrens, for example if I want to have a footer or a header for all my system I can add it inside ``src/app/layout.tsx`` but if I want to have a footer just for dashboard and childrens of it I can create a new file named ``layout.tsx`` inside ``src/app/dashboard`` aside of the ``page.tsx`` and it'll apply to all my childrens from there.
+
+Magic.
+
+The sample:
+
+```tsx
+// src/app/blog/layout.tsx
+export default function BlogLayout({children}) {
+    return (
+        <div>
+            <h1>Hi this is Blog Layout</h1>
+            {children}
+        </div>
+    )
+}
+```
