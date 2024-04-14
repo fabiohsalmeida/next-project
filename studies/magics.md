@@ -93,3 +93,32 @@ export default function Loading() {
 ```
 
 ### error.tsx
+
+### page.module.css
+
+This is a module with all the css for that specific page, example:
+
+```css
+/* src/app/contact/page.module.css */
+
+.contact {
+    background-color: brown;
+}
+```
+
+To use it is less magical than the rest, you have to import and call as a property of a file here it is:
+
+```tsx
+import React from 'react'
+import styles from './page.module.css'
+
+export default function Contact() {
+    return (
+        <div className={styles.contact}>
+            Contact
+        </div>
+    )
+}
+```
+
+There is no conflict when using module.css, because when it bundles it creates a new className, for example in the tutorial it doesnt use a class name ``contact`` in the div above, it uses ``page_contact_6Sm1h`` that probably changes each time its made the bundle up.
