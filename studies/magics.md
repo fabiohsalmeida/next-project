@@ -123,8 +123,7 @@ export default function Contact() {
 
 There is no conflict when using module.css, because when it bundles it creates a new className, for example in the tutorial it doesnt use a class name ``contact`` in the div above, it uses ``page_contact_6Sm1h`` that probably changes each time its made the bundle up.
 
-
-## Tricks
+## Tips and Tricks
 
 ### Page Not Found
 
