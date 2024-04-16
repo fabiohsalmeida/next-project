@@ -1,18 +1,29 @@
 import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
-export default function BlogPost() {
+async function getData(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        cache: 'no-store'
+    });
+
+    if (!res.ok) {
+        return notFound()
+    }
+
+    return res.json();
+}
+
+export default async function BlogPost({params}) {
+    const data = await getData(params.id)
+
     return (
         <div className={styles.container}>
             <div className={styles.top}>
                 <div className={styles.info}>
-                    <h1 className={styles.title}>
-                        Lorem ipsum dolor sit amet
-                    </h1>
-                    <p className={styles.description}>
-                        Vivamus at accumsan nunc. Curabitur ornare arcu porta ultricies convallis. Vivamus varius odio sed sollicitudin molestie. Etiam ullamcorper urna sed aliquam elementum. Aliquam in enim porttitor, finibus tellus non, tincidunt eros. Ut gravida massa metus, ut ullamcorper metus congue non. Donec ultrices, enim ut hendrerit eleifend, dui lacus blandit velit, iaculis mollis ligula orci sed leo. Sed sit amet nulla lacus. Nulla egestas nulla non aliquam molestie. Aenean ut dolor vitae sapien faucibus maximus pretium at purus. Sed non facilisis libero.
-                    </p>
+                    <h1 className={styles.title}>{data.title}</h1>
+                    <p className={styles.description}>{data.body}</p>
                     <div className={styles.author}>
                         <Image
                             src="https://images.pexels.com/photos/17070821/pexels-photo-17070821/free-photo-of-natureza-sentado-grama-animais.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

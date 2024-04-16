@@ -122,3 +122,28 @@ export default function Contact() {
 ```
 
 There is no conflict when using module.css, because when it bundles it creates a new className, for example in the tutorial it doesnt use a class name ``contact`` in the div above, it uses ``page_contact_6Sm1h`` that probably changes each time its made the bundle up.
+
+
+## Tricks
+
+### Page Not Found
+
+Rather than just throw a error you can make like this to fail gracefully:
+
+```jsx
+// and this
+import { notFound } from 'next/navigation'
+
+async function getData(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        cache: 'no-store'
+    });
+
+    if (!res.ok) {
+        //this
+        return notFound()
+    }
+
+    return res.json();
+}
+```
