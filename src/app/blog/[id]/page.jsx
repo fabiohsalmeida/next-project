@@ -11,7 +11,7 @@ export default function BlogPost() {
                         Lorem ipsum dolor sit amet
                     </h1>
                     <p className={styles.description}>
-
+                        Vivamus at accumsan nunc. Curabitur ornare arcu porta ultricies convallis. Vivamus varius odio sed sollicitudin molestie. Etiam ullamcorper urna sed aliquam elementum. Aliquam in enim porttitor, finibus tellus non, tincidunt eros. Ut gravida massa metus, ut ullamcorper metus congue non. Donec ultrices, enim ut hendrerit eleifend, dui lacus blandit velit, iaculis mollis ligula orci sed leo. Sed sit amet nulla lacus. Nulla egestas nulla non aliquam molestie. Aenean ut dolor vitae sapien faucibus maximus pretium at purus. Sed non facilisis libero.
                     </p>
                     <div className={styles.author}>
                         <Image

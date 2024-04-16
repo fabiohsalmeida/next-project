@@ -1,8 +1,10 @@
 .container {
+    margin-top: 40px;
 }
 
 .top {
   display: flex;
+  gap: 20px;
 }
 
 .info {
@@ -16,9 +18,10 @@
   font-size: 40px;
 }
 
-.desc{
+.description{
   font-size: 18px;
   font-weight: 300;
+  text-align: center;
 }
 
 .author {
@@ -40,6 +43,7 @@
 
 .image {
   object-fit: cover;
+  object-position: 50% 80%;
 }
 
 .content {
